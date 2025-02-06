@@ -1,0 +1,31 @@
+/* Correcting unit inconsistencies and operator precedence issues */
+
+/* Ensure consistent units throughout the calculation */
+.container {
+  width: calc(100vw - 20px); /* Use vw for viewport width */
+}
+
+/* Add spaces around operators for clarity */
+.element {
+  width: calc(50% + 25px);
+  height: calc(100px * 2);
+}
+
+/*Use parenthesis to manage calculations order*/
+.element {
+  width: calc( (100% - 50px) / 2 );
+}
+
+/* handle cases where parent's width is not explicitly specified */
+.parent {
+  width: 500px; /* add an explicit width */
+}
+.child {
+  width: calc(50% - 10px);
+}
+
+/* Correcting missing spaces */
+.element {
+  width: calc(100px + 20px); /* Correct: Space around the plus operator */
+  height: calc(50% - 10px); /* Correct: Space around minus operator */
+}
